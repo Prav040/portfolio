@@ -3,9 +3,12 @@
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { useLanguage } from '@/lib/LanguageContext';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X } from 'lucide-react';
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { language, toggleLanguage, content } = useLanguage();
 
   useEffect(() => {
@@ -16,6 +19,14 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const navLinks = [
+    { href: "#about", label: content.ui.nav.about },
+    { href: "#skills", label: content.ui.nav.skills },
+    { href: "#experience", label: content.ui.nav.experience },
+    { href: "#tutoring", label: content.ui.sections.tutoring.navTitle },
+    { href: "#projects", label: content.ui.nav.projects }
+  ];
+
   return (
     <nav
       className={cn(
@@ -24,17 +35,18 @@ export function Navbar() {
       )}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <a href="#" className="text-2xl font-display font-bold tracking-tighter">
+        <a href="#" className="text-2xl font-display font-bold tracking-tighter z-50">
           Praveen<span className="text-blue-500">.</span>
         </a>
+        
+        {/* Desktop Navigation */}
         <div className="hidden md:flex gap-8 items-center text-sm font-medium text-slate-300">
-          <a href="#about" className="hover:text-white transition-colors">{content.ui.nav.about}</a>
-          <a href="#skills" className="hover:text-white transition-colors">{content.ui.nav.skills}</a>
-          <a href="#experience" className="hover:text-white transition-colors">{content.ui.nav.experience}</a>
-          <a href="#tutoring" className="hover:text-white transition-colors">{content.ui.sections.tutoring.navTitle}</a>
-          <a href="#projects" className="hover:text-white transition-colors">{content.ui.nav.projects}</a>
+          {navLinks.map((link) => (
+            <a key={link.href} href={link.href} className="hover:text-white transition-colors">{link.label}</a>
+          ))}
         </div>
-        <div className="flex items-center gap-4">
+        
+        <div className="flex items-center gap-4 z-50">
           <button 
             onClick={toggleLanguage}
             className="text-sm font-medium text-slate-300 hover:text-white transition-colors border border-white/10 rounded-full px-3 py-1 bg-white/5 hover:bg-white/10"
@@ -48,8 +60,48 @@ export function Navbar() {
           >
             {content.ui.nav.contact}
           </a>
+          
+          {/* Mobile Menu Toggle */}
+          <button 
+            className="md:hidden p-2 text-slate-300 hover:text-white"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
       </div>
+
+      {/* Mobile Navigation Menu */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="absolute top-full left-0 w-full bg-[#030305]/95 backdrop-blur-xl border-b border-white/10 shadow-2xl md:hidden"
+          >
+            <div className="container mx-auto px-6 py-8 flex flex-col gap-6">
+              {navLinks.map((link) => (
+                <a 
+                  key={link.href} 
+                  href={link.href} 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-lg font-medium text-slate-300 hover:text-white transition-colors border-b border-white/5 pb-4"
+                >
+                  {link.label}
+                </a>
+              ))}
+              <a 
+                href="#contact" 
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="inline-flex items-center justify-center rounded-full border border-blue-500/50 bg-blue-500/10 px-6 py-3 text-sm font-medium text-white transition-colors mt-4"
+              >
+                {content.ui.nav.contact}
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }

@@ -25,29 +25,31 @@ export function Skills() {
           <p className="text-slate-400 max-w-2xl mx-auto">{content.ui.sections.skills.subtitle}</p>
         </motion.div>
 
-        <div className="flex justify-center gap-4 mb-12">
-          <button
-            onClick={() => setActiveTab('hard')}
-            className={cn(
-              "px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 border",
-              activeTab === 'hard' 
-                ? "bg-blue-500/20 text-white border-blue-500/50 shadow-[0_0_20px_rgba(59,130,246,0.2)]" 
-                : "bg-white/5 text-slate-400 border-white/10 hover:text-slate-200 hover:bg-white/10"
-            )}
-          >
-            {content.ui.sections.skills.tabTech}
-          </button>
-          <button
-            onClick={() => setActiveTab('soft')}
-            className={cn(
-              "px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 border",
-              activeTab === 'soft' 
-                ? "bg-cyan-500/20 text-white border-cyan-500/50 shadow-[0_0_20px_rgba(6,182,212,0.2)]" 
-                : "bg-white/5 text-slate-400 border-white/10 hover:text-slate-200 hover:bg-white/10"
-            )}
-          >
-            {content.ui.sections.skills.tabSoft}
-          </button>
+        <div className="flex justify-center mb-12">
+          <div className="inline-flex bg-[#0a0a0f] p-1.5 rounded-full border border-white/10 shadow-inner">
+            <button
+              onClick={() => setActiveTab('hard')}
+              className={cn(
+                "px-8 py-2.5 rounded-full text-sm font-semibold transition-all duration-300",
+                activeTab === 'hard' 
+                  ? "bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-lg shadow-blue-500/25" 
+                  : "text-slate-400 hover:text-slate-200 hover:bg-white/5"
+              )}
+            >
+              {content.ui.sections.skills.tabTech}
+            </button>
+            <button
+              onClick={() => setActiveTab('soft')}
+              className={cn(
+                "px-8 py-2.5 rounded-full text-sm font-semibold transition-all duration-300",
+                activeTab === 'soft' 
+                  ? "bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg shadow-cyan-500/25" 
+                  : "text-slate-400 hover:text-slate-200 hover:bg-white/5"
+              )}
+            >
+              {content.ui.sections.skills.tabSoft}
+            </button>
+          </div>
         </div>
 
         <AnimatePresence mode="wait">

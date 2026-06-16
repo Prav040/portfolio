@@ -61,6 +61,7 @@ export const contentDe: ContentType = {
       "BI Tools: Tableau, Looker, Metabase",
       "ETL: dbt, Pentaho PDI",
       "Cloud: AWS, Azure, Snowflake",
+      "DevOps: Git & CI/CD",
       "Zeitreihenanalyse & Predictive Modeling"
     ],
     soft: [
@@ -244,6 +245,7 @@ export const contentEn: ContentType = {
       "BI Tools: Tableau, Looker, Metabase",
       "ETL: dbt, Pentaho PDI",
       "Cloud: AWS, Azure, Snowflake",
+      "DevOps: Git & CI/CD",
       "Time Series Analysis & Predictive Modeling"
     ],
     soft: [

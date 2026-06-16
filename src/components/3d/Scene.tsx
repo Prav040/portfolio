@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Float, Stars } from '@react-three/drei';
 import * as THREE from 'three';
@@ -35,9 +35,24 @@ function GlowingOrb({ position, color, size, speed }: { position: [number, numbe
 }
 
 export function Scene() {
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    // Check screen size only on client side to avoid hydration mismatches
+    const checkScreen = () => {
+      setIsDesktop(window.innerWidth > 768);
+    };
+    checkScreen();
+    window.addEventListener('resize', checkScreen);
+    return () => window.removeEventListener('resize', checkScreen);
+  }, []);
+
+  // Return nothing on mobile devices to save massive amount of GPU/CPU resources
+  if (!isDesktop) return null;
+
   return (
     <div className="fixed inset-0 pointer-events-none z-0 opacity-60">
-      <Canvas camera={{ position: [0, 0, 10], fov: 45 }}>
+      <Canvas camera={{ position: [0, 0, 10], fov: 45 }} dpr={[1, 1.5]}>
         <ambientLight intensity={0.5} />
         <Stars radius={100} depth={50} count={3000} factor={3} saturation={0} fade speed={1} />
         

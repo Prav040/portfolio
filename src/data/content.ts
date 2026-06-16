@@ -3,7 +3,7 @@ export type ContentType = {
     nav: { about: string; skills: string; experience: string; projects: string; contact: string; };
     hero: { viewProjects: string; contactMe: string; greeting: string; };
     sections: {
-      skills: { title1: string; title2: string; subtitle: string; };
+      skills: { title1: string; title2: string; subtitle: string; tabTech: string; tabSoft: string; };
       experience: { title1: string; title2: string; };
       education: { title1: string; title2: string; };
       projects: { title1: string; title2: string; };
@@ -20,7 +20,10 @@ export type ContentType = {
     linkedin: string;
     bio: string;
   };
-  skills: string[];
+  skills: {
+    hard: string[];
+    soft: string[];
+  };
   languages: { name: string; level: string; }[];
   experience: { role: string; company: string; location: string; period: string; achievements: string[]; }[];
   education: { degree: string; institution: string; location: string; period: string; details: string[]; }[];
@@ -35,7 +38,7 @@ export const contentDe: ContentType = {
     nav: { about: "Über mich", skills: "Fähigkeiten", experience: "Erfahrung", projects: "Projekte", contact: "Kontakt" },
     hero: { viewProjects: "Projekte ansehen", contactMe: "Kontakt aufnehmen", greeting: "Hallo, ich bin" },
     sections: {
-      skills: { title1: "Kern-", title2: "Fähigkeiten", subtitle: "Fachwissen, das durch fundierte akademische Ausbildung und praktische Branchenerfahrung geschärft wurde." },
+      skills: { title1: "Kern-", title2: "Fähigkeiten", subtitle: "Fachwissen, das durch fundierte akademische Ausbildung und praktische Branchenerfahrung geschärft wurde.", tabTech: "Tech-Stack", tabSoft: "Softskills" },
       experience: { title1: "Berufliche ", title2: "Erfahrung" },
       education: { title1: "Akademische ", title2: "Ausbildung" },
       projects: { title1: "Ausgewählte ", title2: "Projekte" },
@@ -52,15 +55,23 @@ export const contentDe: ContentType = {
     linkedin: "https://www.linkedin.com/in/praveen-skanda-rupan-499ab8149/",
     bio: "Datenanalyse-Experte mit starkem technischen Hintergrund und Erfahrung in der geduldigen Vermittlung komplexer Inhalte. Motiviert, analytische Fähigkeiten in einer innovativen Umgebung einzusetzen.",
   },
-  skills: [
-    "SQL & Python",
-    "BI Tools: Tableau, Looker, Metabase",
-    "ETL: dbt, Pentaho PDI",
-    "Cloud: AWS, Azure, Snowflake",
-    "Zeitreihenanalyse & Predictive Modeling",
-    "Analytisches Denken & Problem-Solving",
-    "Kommunikation komplexer Daten"
-  ],
+  skills: {
+    hard: [
+      "SQL & Python",
+      "BI Tools: Tableau, Looker, Metabase",
+      "ETL: dbt, Pentaho PDI",
+      "Cloud: AWS, Azure, Snowflake",
+      "Zeitreihenanalyse & Predictive Modeling"
+    ],
+    soft: [
+      "Analytisches Denken & Problem-Solving",
+      "Kommunikation komplexer Daten",
+      "Innovationsfähigkeit",
+      "Teamarbeit und Kollaboration",
+      "Vermittlung komplexer Konzepte",
+      "Interkulturelle Kommunikation"
+    ]
+  },
   languages: [
     { name: "Deutsch", level: "Muttersprachler" },
     { name: "Tamil", level: "Muttersprachler" },
@@ -210,7 +221,7 @@ export const contentEn: ContentType = {
     nav: { about: "About", skills: "Skills", experience: "Experience", projects: "Projects", contact: "Contact" },
     hero: { viewProjects: "View Projects", contactMe: "Contact Me", greeting: "Hi, I'm" },
     sections: {
-      skills: { title1: "Core ", title2: "Skills", subtitle: "Expertise honed through rigorous academic training and practical industry experience." },
+      skills: { title1: "Core ", title2: "Skills", subtitle: "Expertise honed through rigorous academic training and practical industry experience.", tabTech: "Tech Stack", tabSoft: "Soft Skills" },
       experience: { title1: "Professional ", title2: "Experience" },
       education: { title1: "Academic ", title2: "Education" },
       projects: { title1: "Featured ", title2: "Projects" },
@@ -227,15 +238,23 @@ export const contentEn: ContentType = {
     linkedin: "https://www.linkedin.com/in/praveen-skanda-rupan-499ab8149/",
     bio: "Data analysis expert with a strong technical background and experience in patiently conveying complex content. Motivated to apply analytical skills in an innovative environment.",
   },
-  skills: [
-    "SQL & Python",
-    "BI Tools: Tableau, Looker, Metabase",
-    "ETL: dbt, Pentaho PDI",
-    "Cloud: AWS, Azure, Snowflake",
-    "Time Series Analysis & Predictive Modeling",
-    "Analytical Thinking & Problem-Solving",
-    "Communicating Complex Data"
-  ],
+  skills: {
+    hard: [
+      "SQL & Python",
+      "BI Tools: Tableau, Looker, Metabase",
+      "ETL: dbt, Pentaho PDI",
+      "Cloud: AWS, Azure, Snowflake",
+      "Time Series Analysis & Predictive Modeling"
+    ],
+    soft: [
+      "Analytical Thinking & Problem-Solving",
+      "Communicating Complex Data",
+      "Innovation Capability",
+      "Teamwork & Collaboration",
+      "Explaining Complex Concepts",
+      "Intercultural Communication"
+    ]
+  },
   languages: [
     { name: "German", level: "Native Speaker" },
     { name: "Tamil", level: "Native Speaker" },

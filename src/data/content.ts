@@ -53,13 +53,13 @@ export const contentDe: ContentType = {
     bio: "Datenanalyse-Experte mit starkem technischen Hintergrund und Erfahrung in der geduldigen Vermittlung komplexer Inhalte. Motiviert, analytische Fähigkeiten in einer innovativen Umgebung einzusetzen.",
   },
   skills: [
-    "Analytisches Denken",
-    "Problem-solving Fähigkeiten",
-    "Innovationsfähigkeit",
-    "Technische Expertise im Umgang mit KI-Tools",
-    "Teamarbeit und Kollaboration",
-    "Vermittlung komplexer Konzepte an diverse Zielgruppen",
-    "Interkulturelle Kommunikationsfähigkeiten",
+    "SQL & Python",
+    "BI Tools: Tableau, Looker, Metabase",
+    "ETL: dbt, Pentaho PDI",
+    "Cloud: AWS, Azure, Snowflake",
+    "Zeitreihenanalyse & Predictive Modeling",
+    "Analytisches Denken & Problem-Solving",
+    "Kommunikation komplexer Daten"
   ],
   languages: [
     { name: "Deutsch", level: "Muttersprachler" },
@@ -74,7 +74,7 @@ export const contentDe: ContentType = {
       period: "Mär 2023 — Heute",
       achievements: [
         "Tätig in der Abteilung Organisationsentwicklung bei der HanseMerkur",
-        "Erfolgreich implementierte Zeitreihenmodelle, was zu einer Verbesserung der Prognosegenauigkeit führte",
+        "Erfolgreich implementierte Zeitreihenmodelle, was zu einer Verbesserung der Vorhersagegenauigkeit bei der Kostenprognose um 12% führte",
         "Implementierung von Tools wie Git, CI/CD (Continuous Integration/Continuous Deployment) und Apache Airflow zur Optimierung und Effizienzsteigerung von Prozessen",
         "Unterstützung bei der Entwicklung und Umsetzung von Maßnahmen zur kontinuierlichen Verbesserung der Unternehmensabläufe",
       ],
@@ -85,7 +85,7 @@ export const contentDe: ContentType = {
       location: "Hamburg",
       period: "Feb 2022 — Mär 2023",
       achievements: [
-        "Analyse großer Datensätze und Erstellung von Berichten und Dashboards zur Unterstützung verschiedener Teams bei Geschäftsentscheidungen",
+        "Aufbau der internen Datenanalyse und Entwicklung von interaktiven Dashboards, die dem Marketing halfen, den ROAS (Return on Ad Spend) signifikant um 22% zu verbessern",
         "Überwachung wichtiger Leistungskennzahlen wie Umsatz und Lagerbestände",
         "Identifizierung von Trends und Mustern im Kaufverhalten der Kunden",
         "Anwendung von Zeitreihenmodellen zur Prognose der Verkaufszahlen einzelner Produkte",
@@ -228,13 +228,13 @@ export const contentEn: ContentType = {
     bio: "Data analysis expert with a strong technical background and experience in patiently conveying complex content. Motivated to apply analytical skills in an innovative environment.",
   },
   skills: [
-    "Analytical Thinking",
-    "Problem-Solving Skills",
-    "Innovation Capability",
-    "Technical Expertise in AI Tools",
-    "Teamwork and Collaboration",
-    "Communicating Complex Concepts to Diverse Audiences",
-    "Intercultural Communication Skills",
+    "SQL & Python",
+    "BI Tools: Tableau, Looker, Metabase",
+    "ETL: dbt, Pentaho PDI",
+    "Cloud: AWS, Azure, Snowflake",
+    "Time Series Analysis & Predictive Modeling",
+    "Analytical Thinking & Problem-Solving",
+    "Communicating Complex Data"
   ],
   languages: [
     { name: "German", level: "Native Speaker" },
@@ -249,7 +249,7 @@ export const contentEn: ContentType = {
       period: "Mar 2023 — Present",
       achievements: [
         "Working in the Organizational Development department at HanseMerkur",
-        "Successfully implemented time series models, leading to improved forecasting accuracy",
+        "Successfully implemented time series models, leading to a 12% improvement in forecasting accuracy for cost prediction",
         "Implementation of tools like Git, CI/CD, and Apache Airflow to optimize processes and increase efficiency",
         "Supporting the development and implementation of measures for continuous improvement of business operations",
       ],
@@ -260,7 +260,7 @@ export const contentEn: ContentType = {
       location: "Hamburg",
       period: "Feb 2022 — Mar 2023",
       achievements: [
-        "Analyzing large datasets and creating reports and dashboards to support various teams in business decisions",
+        "Established internal data analytics and developed interactive dashboards, helping marketing significantly improve ROAS (Return on Ad Spend) by 22%",
         "Monitoring key performance indicators such as revenue and inventory levels",
         "Identifying trends and patterns in customer purchasing behavior",
         "Applying time series models to forecast sales figures for individual products",
